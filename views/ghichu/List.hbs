@@ -1,0 +1,49 @@
+<form method="post" action="">
+    <table class="table align-middle mb-0 bg-white">
+        <button type="submit" class="btn btn-primary btn-block mb-4">Sort</button>
+        <thead class="bg-light">
+        <tr>
+            <th>Tiêu đề</th>
+            <th>Nội dung</th>
+            <th>Trạng thái</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each listGhiChu}}
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img
+                                src="{{this.anhdaidien}}"
+                                alt=""
+                                style="width: 45px; height: 45px"
+                                class="rounded-circle"
+                        />
+                        <div class="ms-3">
+                            <p class=" mb-1">{{this.tieude}} </p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <p class=" mb-1">{{this.noidung}}</p>
+                </td>
+                <td>
+                    <p class=" mb-1">{{this.trangthai}}</p>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary ">
+                        <a href="/ghichus/Update/{{this._id}}" style="color: white;text-decoration: none" type="submit">Update</a>
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        <a href="/ghichus/Delete/{{this._id}}" style="color: white;text-decoration: none" type="submit">Delete</a>
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        <a href="/ghichus/UpdateStatus/{{this._id}}" style="color: white;text-decoration: none" type="submit">Update Status</a>
+                    </button>
+
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</form>
